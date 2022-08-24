@@ -15,6 +15,7 @@ public WebDriver driver;
 	@BeforeClass
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
+		driver.manage().window().maximize();
 		driver.get("http://keybooks.ro");
 	}
 	@AfterClass
