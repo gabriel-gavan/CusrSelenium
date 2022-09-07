@@ -1,6 +1,7 @@
 package Curs5Tema;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 
@@ -63,6 +64,8 @@ public class FindBookStoryAboutMe extends BaseTest{
 			 Thread.sleep(5000);
 			 System.out.println(	confirmAddtoChart.getText());
 			// assertEquals(driver.findElement(By.cssSelector("div[class*='woocommerce-message']")).isDisplayed(),"true");
+			 
+			 assertTrue(confirmAddtoChart.getText().contains("has been added to your cart"));
 			 confirmAddtoChart.click();
 			 Thread.sleep(5000);
 	}
