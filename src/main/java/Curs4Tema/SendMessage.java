@@ -40,7 +40,7 @@ public class SendMessage extends BaseTest{
 				sendmessagecontact.click();
 				
 				//find confirmation text for the message
-				WebElement confirmmessagesentcontact = driver.findElement(By.cssSelector("#wpcf7-f1328-p51-o1 > form > div.wpcf7-response-output"));
+				WebElement confirmmessagesentcontact = driver.findElement(By.cssSelector("div[class*='response-output']"));
 			
 				Thread.sleep(5000);
 				System.out.println(	confirmmessagesentcontact.getText());
