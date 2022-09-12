@@ -34,5 +34,16 @@ public class JSAllertsExample extends BaseTest {
 		assertEquals(result.getText(), "You clicked: Cancel");
 		
 	}
-
+	
+	@Test (priority=2)
+	public void promptJsAllertExample() throws InterruptedException {
+		driver.findElement(By.cssSelector("button[onclick*='jsPrompt()']")).click();
+		Thread.sleep(2000);
+		driver.switchTo().alert().sendKeys("Test"); 
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		WebElement result = driver.findElement(By.cssSelector("p[id='result']"));		
+		assertEquals(result.getText(), "You entered: Test");
+		
+	}
 }
