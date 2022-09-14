@@ -18,6 +18,8 @@ public WebDriver driver;
 		driver.manage().window().maximize();
 		driver.get("http://keybooks.ro");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+		
+		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 	}
 	@AfterClass
 	public void teardown() throws InterruptedException {
