@@ -14,8 +14,6 @@ import org.openqa.selenium.WebDriver;
 	public By biographyskill = By.cssSelector("div[class='sc_skills_item sc_skills_style_1 even inited']>div>div");
 	public By cookbookxskill = By.cssSelector("div[class='sc_skills_item sc_skills_style_1 odd inited']>div>div");
 	
-	public void navigateTo(By locator) {
-		driver.findElement(locator).click();
-	}
+
 }
 	
