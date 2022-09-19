@@ -1,5 +1,7 @@
 package Utils;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +18,7 @@ public WebDriver driver;
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("http://keybooks.ro");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		
