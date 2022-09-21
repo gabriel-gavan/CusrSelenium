@@ -20,12 +20,20 @@ public JavascriptExecutor jse;
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("http://keybooks.ro");
+
+		//driver.get("http://keybooks.ro");
+
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		
+
 		//driver.gejt("https://the-internet.herokuapp.com/dynamic_loading/2");
 		jse= (JavascriptExecutor) driver;
+
+		driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
+
 	}
 	@AfterClass
 	public void teardown() throws InterruptedException {

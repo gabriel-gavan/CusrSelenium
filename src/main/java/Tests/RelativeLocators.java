@@ -39,3 +39,4 @@ public class RelativeLocators extends BaseTest{
 		Thread.sleep(4000);
 	}
 }
+
