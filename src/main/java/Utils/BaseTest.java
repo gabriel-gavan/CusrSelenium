@@ -32,7 +32,7 @@ public JavascriptExecutor jse;
 		//driver.gejt("https://the-internet.herokuapp.com/dynamic_loading/2");
 		jse= (JavascriptExecutor) driver;
 
-		driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
+		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 
 	}
 	@AfterClass

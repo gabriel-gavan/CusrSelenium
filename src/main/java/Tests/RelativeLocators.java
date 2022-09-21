@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.locators.RelativeLocator;
+import org.testng.annotations.Test;
 
 import Utils.BaseTest;
   
 public class RelativeLocators extends BaseTest{
+	@Test
 	public void relativeLocatorsExample() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
