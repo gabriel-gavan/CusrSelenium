@@ -8,7 +8,7 @@ public class BlogPage {
 	public BlogPage(WebDriver driver) {
 		this.driver = driver;
 }
-	public By openClassic = By.xpath("//li[@id='menu-item-114']/a[@href = 'https://keybooks.ro/category/classic/']");
+	
 	public By blogPost = By.xpath("(//h4[@class='post_title'])[3]");
 	
 	public By nameField = By.xpath("//input[@id='author']");
@@ -23,10 +23,7 @@ public class BlogPage {
 	
 	//div[@class='comment_not_approved']
 	
-	public void openClassicsMenuOption() {
-		driver.findElement(openClassic).click();
-		
-	}
+
 	
 	public void openblogPost() {
 		driver.findElement(blogPost).click();

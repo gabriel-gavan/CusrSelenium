@@ -16,8 +16,14 @@ public class NavMenuPage {
 	public By contactLink = By.linkText("CONTACTS");
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
 	public By blogLink = By.xpath("//a[contains(text(),'Blog')]");
+	public By openClassic = By.xpath("//li[@id='menu-item-114']/a[@href = 'https://keybooks.ro/category/classic/']");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
+	}
+	
+	public void openClassicsMenuOption() {
+		driver.findElement(openClassic).click();
+		
 	}
 }

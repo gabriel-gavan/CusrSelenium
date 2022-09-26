@@ -21,7 +21,7 @@ public class BlogTest extends BaseTest {
 	navMenu.navigateTo(navMenu.blogLink);
 	
 	BlogPage blogpage = new BlogPage (driver);
-	blogpage.openClassicsMenuOption();
+	navMenu.openClassicsMenuOption();
 	blogpage.openblogPost();
 	
 	jse.executeScript("window.scrollBy(0,1500)", "");
