@@ -33,7 +33,7 @@ public JavascriptExecutor jse;
 		jse= (JavascriptExecutor) driver;
 
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
-
+		//comment pt conflict
 	}
 	@AfterClass
 	public void teardown() throws InterruptedException {
