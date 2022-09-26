@@ -15,6 +15,7 @@ public class NavMenuPage {
 	public By loginLink = By.linkText("Login");
 	public By contactLink = By.linkText("CONTACTS");
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
+	public By blogLink = By.xpath("//a[contains(text(),'Blog')]");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
