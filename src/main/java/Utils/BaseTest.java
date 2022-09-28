@@ -9,12 +9,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import Pages.NavMenuPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
 public WebDriver driver;
 public JavascriptExecutor jse;
+public NavMenuPage navMenu;
 
 	@BeforeClass
 	public void setup() {
@@ -31,6 +33,7 @@ public JavascriptExecutor jse;
 
 		//driver.gejt("https://the-internet.herokuapp.com/dynamic_loading/2");
 		jse= (JavascriptExecutor) driver;
+		navMenu = new NavMenuPage(driver);
 
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 		//comment pt conflict
