@@ -41,7 +41,7 @@ public class ShopPage {
 		public void  selectByIndex(int index) {
 			WebElement dropdown = driver.findElement(orderDropdown);
 			select = new Select(dropdown);
-			select.selectByIndex(index);
+			select.selectByIndex(index); 
 		}
 		public void  selectByVisibleText(String text) {
 			WebElement dropdown = driver.findElement(orderDropdown);

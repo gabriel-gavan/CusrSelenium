@@ -32,6 +32,8 @@ public class NavMenuPage {
 		return new BlogPage(driver);
 	}
 	
+	
+	
 	public void openClassicsMenuOption() {
 		driver.findElement(openClassic).click();
 		
