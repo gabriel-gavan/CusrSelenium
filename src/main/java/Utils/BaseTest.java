@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import Pages.NavMenuPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -17,14 +18,15 @@ public class BaseTest {
 public WebDriver driver;
 public JavascriptExecutor jse;
 public NavMenuPage navMenu;
-
-	@BeforeClass
-	public void setup() {
+ 
+	@BeforeClass (alwaysRun=true)
+	@Parameters({"url"})
+	public void setup(String url) {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("http://keybooks.ro");
+		driver.get(url);
 
 		//driver.get("http://keybooks.ro");
 

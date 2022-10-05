@@ -13,14 +13,14 @@ import Utils.BaseTest;
 
 public class dropdownTest extends BaseTest{
 
-	@Test (priority = 1)
+	@Test (priority = 1, groups="ProductFunctionality")
 	public void selectByValueTest() {
 		ShopPage shoppage = navMenu.navigateToShop();
 		shoppage.selectByValue("price");
 		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/shop/?orderby=price");
 		assertEquals(shoppage.getSelectedOption(),"Sort by price: low to high");
 	}
-	@Test(priority=2)
+	@Test(priority=2, groups="ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.shopLink);
@@ -28,7 +28,7 @@ public class dropdownTest extends BaseTest{
 		shoppage.selectByVisibleText("Sort by popularity");
 		assertEquals(shoppage.getSelectedOption(),"Sort by popularity");
 	}
-	@Test(priority=3)
+	@Test(priority=3, groups="ProductFunctionality")
 	public void selectByIndexTest() {
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.shopLink);
