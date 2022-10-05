@@ -25,12 +25,12 @@ public class ShippingAddressTest extends BaseTest{
 		shippingaddress.editShippingAddresses();
 		shippingaddress.selectCountryRegion(41);
 		jse.executeScript("window.scrollBy(0,500)", "");
-		assertEquals(shippingaddress.getCountryRegionName(),"Canada");
+		assertEquals(shippingaddress.getCountryRegionProvinceName(shippingaddress.selectCountryRegionDropdown),"Canada");
 		//Thread.sleep(5000);
 		
 		
 		shippingaddress.selectProvince("NL");
-		assertEquals(shippingaddress.getProvinceName(),"Newfoundland and Labrador");
+		assertEquals(shippingaddress.getCountryRegionProvinceName(shippingaddress.selectProvince),"Newfoundland and Labrador");
 		Thread.sleep(5000);
 	}
 }

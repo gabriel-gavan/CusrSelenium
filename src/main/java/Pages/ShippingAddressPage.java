@@ -14,10 +14,10 @@ public class ShippingAddressPage {
 		this.driver = driver;
 	}
 	public By clickloggedusername = By.xpath("//span[@class='user_name']");
-	public By accessUserSettings = By.xpath("//a[@href='https://keybooks.ro/wp-admin/profile.php']");
+	public By accessUserSettings = By.xpath("//a[contains(@href,'profile.php')]");
 	
-	public By openAddresses = By.xpath("//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address']/a");
-	public By editShippingAddress = By.xpath("//a[@href='https://keybooks.ro/account/edit-address/shipping/']");
+	public By openAddresses = By.xpath("//li[contains(@class, 'edit-address')]/a");
+	public By editShippingAddress = By.xpath("//a[contains(@href,'shipping')]");
 	
 	public By selectCountryRegionDropdown = By.name("shipping_country");
 	public By selectProvince = By.name("shipping_state");
@@ -51,15 +51,11 @@ public class ShippingAddressPage {
 		select.selectByValue(value);
 	}
 	
-	public String getCountryRegionName() {
-		WebElement countryregiondropdown = driver.findElement(selectCountryRegionDropdown);
+	public String getCountryRegionProvinceName(By locator) {
+		WebElement countryregiondropdown = driver.findElement(locator);
 		select = new Select(countryregiondropdown);
 		return select.getFirstSelectedOption().getText();
 	}
-   public String getProvinceName() {
-			WebElement provincedropdown = driver.findElement(selectProvince);
-		select = new Select(provincedropdown);
-			return select.getFirstSelectedOption().getText();
-}
+ 
 }
 
