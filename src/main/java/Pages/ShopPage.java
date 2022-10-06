@@ -23,7 +23,8 @@ public class ShopPage {
 		
 		public By orderDropdown = By.name("orderby");
 		
-		
+		public By priceOfFirstBookAfterSortByPriceLowtoHigh = By.cssSelector("li[class*='column-1_4']:first-of-type>div>div[class='post_content']>span>span>bdi");
+		public By priceOfLastBookAfterSortByPriceLowtoHigh = By.cssSelector("li[class*='column-1_4']:last-of-type>div>div[class='post_content']>span>span>bdi");
 		
 		public void openrandombook() {
 		driver.findElement(openrandombook).click();
@@ -52,5 +53,17 @@ public class ShopPage {
 			WebElement dropdown = driver.findElement(orderDropdown);
 			select = new Select(dropdown);
 			return select.getFirstSelectedOption().getText();		}
+		
+		public double getBookPrice(By locator) {
+			String PriceBook = driver.findElement(locator).getText();
+			Double value=null;
+			
+			if(PriceBook.contains("$")){
+			     value=Double.valueOf(PriceBook.replace("$",""));
+			
+			}
+			return value;
+			
+			}
 }
 

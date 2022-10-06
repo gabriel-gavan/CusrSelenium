@@ -13,7 +13,7 @@ import Utils.BaseTest;
 
 public class dropdownTest extends BaseTest{
 
-	@Test (priority = 1, groups="ProductFunctionality")
+	@Test (priority = 1, groups={"ProductFunctionality"})
 	public void selectByValueTest() {
 		ShopPage shoppage = navMenu.navigateToShop();
 		shoppage.selectByValue("price");

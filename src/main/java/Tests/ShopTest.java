@@ -1,5 +1,6 @@
 package Tests;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
@@ -15,7 +16,7 @@ import Utils.BaseTest;
 
 public class ShopTest extends BaseTest{
 	
-	@Test (priority=0)
+	//@Test (priority=0)
 	public void addShopPageAssertions() throws InterruptedException {
 	NavMenuPage navMenu = new NavMenuPage(driver);
 	navMenu.navigateTo(navMenu.shopLink);
@@ -38,5 +39,20 @@ public class ShopTest extends BaseTest{
 	assertTrue(shoppage.elementisPresent(shoppage.bookAddToCart));
 	assertTrue(shoppage.elementisPresent(shoppage.bookBiography));
 	}
+	@Test (priority = 1)
+	public void selectByValueTest() {
+		ShopPage shoppage = navMenu.navigateToShop();
+		shoppage.selectByValue("price");
+		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/shop/?orderby=price");
+		assertEquals(shoppage.getSelectedOption(),"Sort by price: low to high");
+		jse.executeScript("window.scrollBy(0,500)", "");
+		
+		Double Price1= shoppage.getBookPrice(shoppage.priceOfFirstBookAfterSortByPriceLowtoHigh);
+		System.out.println(Price1);
 	
+		Double Price2= shoppage.getBookPrice(shoppage.priceOfLastBookAfterSortByPriceLowtoHigh);
+		System.out.println(Price2);
+		assertTrue(Price1<Price2);     
+		    
+	}
 }
