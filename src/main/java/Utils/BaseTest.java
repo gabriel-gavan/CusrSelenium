@@ -20,15 +20,15 @@ public JavascriptExecutor jse;
 public NavMenuPage navMenu;
  
 	@BeforeClass (alwaysRun=true)
-	@Parameters({"url"})
-	public void setup(String url) {
+	//@Parameters({"url"})
+	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(url);
+		//driver.get(url);
 
-		//driver.get("http://keybooks.ro");
+		driver.get("http://keybooks.ro");
 
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		
