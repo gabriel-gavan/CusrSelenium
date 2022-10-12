@@ -17,6 +17,7 @@ public class NavMenuPage {
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
 	public By blogLink = By.xpath("//a[contains(text(),'Blog')]");
 	public By openClassic = By.xpath("//li[@id='menu-item-114']/a[@href = 'https://keybooks.ro/category/classic/']");
+	public By homePageLink = By.linkText("HOME");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
@@ -31,6 +32,12 @@ public class NavMenuPage {
 		driver.findElement(blogLink).click();
 		return new BlogPage(driver);
 	}
+	
+	public HomePage navigateToHome() {
+		driver.findElement(homePageLink).click();
+		return new HomePage(driver);
+	}
+	
 	
 	
 	
