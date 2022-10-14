@@ -3,11 +3,13 @@ package Utils;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v102.page.model.InstallabilityError;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -44,4 +46,14 @@ public void sendKeys(By locator, String value) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		}
+	public void dragAndDrop(By locator,int x, int y) {
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.dragAndDropBy(element, x,y).perform();
+		
+	//	action.clickAndHold(element).moveByOffset(300, 0).release().build().perform();
+		//action.sendKeys(Keys.TAB).click().sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
+		//action.moveByOffset(600, 300);
+		//action.click();
+	}
 }

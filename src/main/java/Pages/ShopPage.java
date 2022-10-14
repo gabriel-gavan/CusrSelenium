@@ -5,12 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class ShopPage {
+import Utils.SeleniumWrappers;
+
+public class ShopPage extends SeleniumWrappers {
 	public WebDriver driver;
 	public WebElement dropdown;
 	public Select select;
 	public ShopPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 }
 		public By openrandombook = By.xpath("(//h2[@class='woocommerce-loop-product__title'])[7]/a");
 		public By booklookup = By.xpath("//a[@class='woocommerce-product-gallery__trigger']");
@@ -25,7 +27,9 @@ public class ShopPage {
 		
 		public By priceOfFirstBookAfterSortByPriceLowtoHigh = By.cssSelector("li[class*='column-1_4']:first-of-type>div>div[class='post_content']>span>span>bdi");
 		public By priceOfLastBookAfterSortByPriceLowtoHigh = By.cssSelector("li[class*='column-1_4']:last-of-type>div>div[class='post_content']>span>span>bdi");
-		
+		public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
+		public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
+		 
 		public void openrandombook() {
 		driver.findElement(openrandombook).click();
 			}
