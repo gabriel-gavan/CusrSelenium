@@ -3,10 +3,12 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class BlogPage {
-	public WebDriver driver;
+import Utils.SeleniumWrappers;
+
+public class BlogPage extends SeleniumWrappers{
+	//public WebDriver driver;
 	public BlogPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 }
 	
 	public By blogPost = By.xpath("(//h4[@class='post_title'])[3]");
@@ -20,13 +22,15 @@ public class BlogPage {
 	
 	
 	public By confirmComment = By.xpath("//div[@class='comment_not_approved']");
+	public By audioPost = By.cssSelector("h4[class='post_title']>a[href = 'https://keybooks.ro/2016/02/02/audio-post/'");	
 	
 	//div[@class='comment_not_approved']
-	
-
+	public By sliderTimePlay = By.cssSelector("span[class='mejs-time-current']");
+	public By increaseVolume = By.cssSelector("div[style='left: 0px; width: 80%;']");
+	public By playButton = By.xpath("//div[@class='mejs-button mejs-playpause-button mejs-play']");
 	
 	public void openblogPost() {
-		driver.findElement(blogPost).click();
+		click(blogPost);
 			}
 	
 	
@@ -45,5 +49,15 @@ public boolean sendMessageIsDisplayed(By locator) {
 	return driver.findElement(locator).isDisplayed();
 	
 }
+
+public void openAudioPost() {
+	click(blogPost);
+	click(audioPost);
+		}
+public void clickPlay() {
+	click(playButton);
+	waitForElementToBeClickable(driver.findElement(sliderTimePlay));
+}
+
 }
 

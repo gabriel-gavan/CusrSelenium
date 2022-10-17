@@ -15,13 +15,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
-public WebDriver driver;
+public static WebDriver driver;
 public JavascriptExecutor jse;
 public NavMenuPage navMenu;
- 
+ public BasePage app;
 	@BeforeClass (alwaysRun=true)
 	//@Parameters({"url"})
+	
 	public void setup() {
+		
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 
@@ -39,7 +41,9 @@ public NavMenuPage navMenu;
 
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 		//comment pt conflict
-	}
+		app = new BasePage();
+		}
+	
 	@AfterClass
 	public void teardown() throws InterruptedException {
 		Thread.sleep(3000);

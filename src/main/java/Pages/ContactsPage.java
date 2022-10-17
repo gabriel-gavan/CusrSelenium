@@ -3,13 +3,19 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ContactsPage {
+import Utils.SeleniumWrappers;
+
+public class ContactsPage extends SeleniumWrappers {
 	
 	
-		public WebDriver driver;
+		
+	
 		public ContactsPage(WebDriver driver) {
-			this.driver = driver;
+		super(driver);
+		// TODO Auto-generated constructor stub
 	}
+
+
 		public By nameField = By.cssSelector("input[name='your-name'");
 		public By emailField = By.cssSelector("input[name='your-email'");
 		public By subjectField = By.cssSelector("input[name='your-s'");

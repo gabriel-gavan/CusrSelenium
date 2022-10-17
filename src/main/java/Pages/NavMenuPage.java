@@ -26,10 +26,16 @@ public class NavMenuPage extends SeleniumWrappers {
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
 	public By blogLink = By.xpath("//a[contains(text(),'Blog')]");
 	public By openClassic = By.xpath("//li[@id='menu-item-114']/a[@href = 'https://keybooks.ro/category/classic/']");
+	
+	public By openPostFOrmats = By.xpath("//li[@id='menu-item-232']/a[@href = 'https://keybooks.ro/category/post-formats/']");
+	
 	public By homePageLink = By.linkText("HOME");
 	public By searchIcon = By.cssSelector("button[class*='search_submit']");
 	public By searchField = By.cssSelector("input[class*='search_field']");
 	//public By bookPicture = By.cssSelector("img[src*='"+picture+"']");
+	public By bloglink = By.linkText("BLOG");
+	public By aboutLink = By.linkText("ABOUT");
+	public By postFormatsBlogLink = By.linkText("Post Formats");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
@@ -54,7 +60,13 @@ public class NavMenuPage extends SeleniumWrappers {
 	
 	
 	public void openClassicsMenuOption() {
-		driver.findElement(openClassic).click();
+		click(openClassic);
+		
+	}
+	
+	
+	public void openPostFormatsMenuOption() {
+		click(openPostFOrmats);
 		
 	}
 	public void searchBook(String value) {

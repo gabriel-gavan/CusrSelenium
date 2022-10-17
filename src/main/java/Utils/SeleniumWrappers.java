@@ -56,4 +56,15 @@ public void sendKeys(By locator, String value) {
 		//action.moveByOffset(600, 300);
 		//action.click();
 	}
+	
+	public void hoverElement(By locator) {
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).perform();
+		
+	}
+	public String readURL() {
+		return driver.getCurrentUrl();
+	}
+	
 }

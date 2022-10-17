@@ -12,10 +12,11 @@ import org.testng.annotations.Test;
 import Pages.BlogPage;
 import Pages.ContactsPage;
 import Pages.NavMenuPage;
+import Pages.ShopPage;
 import Utils.BaseTest;
 
 public class BlogTest extends BaseTest {
-	@Test (priority=0)
+	//@Test (priority=0)
 	public void addBlogComment() throws InterruptedException {
 	NavMenuPage navMenu = new NavMenuPage(driver);
 	navMenu.navigateTo(navMenu.blogLink);
@@ -41,5 +42,23 @@ public class BlogTest extends BaseTest {
 	
 	
 	}
+	
+	@Test (priority=1)
+	public void editpostFormats() throws InterruptedException {
+		NavMenuPage menu = new NavMenuPage(driver);
+		menu.navigateTo(menu.blogLink);
+		menu.navigateTo(menu.openPostFOrmats);
+		
+		BlogPage postformats = new BlogPage(driver);
+		
+		postformats.openAudioPost();
+		postformats.clickPlay();
+		
+		postformats.dragAndDrop(postformats.sliderTimePlay, 200, 200);
+		
+		postformats.dragAndDrop(postformats.increaseVolume, 0, 30);
+		
+		Thread.sleep(10000);
+}
 	
 }
