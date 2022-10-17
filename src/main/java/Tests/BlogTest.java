@@ -58,7 +58,7 @@ public class BlogTest extends BaseTest {
 		
 		postformats.dragAndDrop(postformats.increaseVolume, 0, 30);
 		
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 }
 	
 }

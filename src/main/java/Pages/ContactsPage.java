@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import Utils.SeleniumWrappers;
-
+import org.openqa.selenium.WebDriver;
 public class ContactsPage extends SeleniumWrappers {
 	
 	
@@ -16,7 +16,7 @@ public class ContactsPage extends SeleniumWrappers {
 	}
 
 
-		public By nameField = By.cssSelector("input[name='your-name'");
+		public By nameField = By.cssSelector("input[name='your-name']");
 		public By emailField = By.cssSelector("input[name='your-email'");
 		public By subjectField = By.cssSelector("input[name='your-s'");
 		public By messageField = By.cssSelector("textarea[name='your-message'");
