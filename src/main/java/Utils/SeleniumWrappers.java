@@ -66,5 +66,7 @@ public void sendKeys(By locator, String value) {
 	public String readURL() {
 		return driver.getCurrentUrl();
 	}
-	
+	public void findElement(By locator) {
+		WebElement element  = driver.findElement(locator);
+	}
 }
