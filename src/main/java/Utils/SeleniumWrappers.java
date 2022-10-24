@@ -29,10 +29,13 @@ public void sendKeys(By locator, String value) {
 	}
 }
 	public void click(By locator) {
-		WebElement element =  driver.findElement(locator);
+		
 		try{
+			
+			WebElement element = driver.findElement(locator);
 			waitForElementToBeClickable(element);
 			element.click();
+		
 		}catch(NoSuchElementException e) {
 			System.out.println("Something went wrong!");
 		
